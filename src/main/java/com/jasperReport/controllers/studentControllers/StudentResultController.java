@@ -28,9 +28,7 @@ public class StudentResultController {
     }
 
     @GetMapping("/{firstName}")
-    public ResponseEntity<StudentResult> getUserDetailsByEmailOrNo(
-            @PathVariable String firstName
-    ) throws JRException, IOException {
+    public ResponseEntity<StudentResult> getUserDetailsByEmailOrNo(@PathVariable String firstName) throws JRException, IOException {
         studentResultService.generateReportForAStudent(firstName);
         StudentResult studentResult = studentResultService.getStudentResult(firstName);
         return new ResponseEntity<>(studentResult, OK);

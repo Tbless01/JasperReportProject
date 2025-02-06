@@ -30,17 +30,28 @@
 		<property name="com.jaspersoft.studio.field.tree.path" value="ADDRESS"/>
 	</field>
 	<field name="basicScience" class="java.lang.Integer"/>
-	<background height="28"/>
+	<background height="32">
+		<element kind="textField" uuid="d313fac3-497e-49d5-96dd-23914f056022" x="340" y="0" width="215" height="30" fontSize="19.0">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="dc70da33-436c-4b80-80cf-8c5a2b3f71a2" x="35" y="2" width="165" height="30" fontSize="18.0">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</background>
 	<title height="72">
 		<element kind="frame" uuid="4b57500b-ffb7-4711-b39e-ef17105117a8" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699">
-			<element kind="staticText" uuid="555c30df-9f20-4ce8-8ded-41d1f9a18cb9" x="20" y="20" width="234" height="43" forecolor="#FFFFFF" fontSize="34.0" bold="true">
-				<text><![CDATA[TITLE]]></text>
+			<element kind="staticText" uuid="555c30df-9f20-4ce8-8ded-41d1f9a18cb9" x="20" y="20" width="40" height="10" forecolor="#FFFFFF" fontSize="34.0" bold="true">
+				<text><![CDATA[]]></text>
 			</element>
 			<element kind="staticText" uuid="28a2294a-7a43-4862-89aa-1910fc0ecf87" x="395" y="43" width="180" height="20" forecolor="#FFFFFF" fontSize="14.0" bold="false" hTextAlign="Right">
 				<text><![CDATA[]]></text>
 			</element>
 			<element kind="textField" uuid="e6a09b63-c513-4781-b9f5-357effaf1a4f" x="350" y="13" width="100" height="30" forecolor="#FFFFFF">
 				<expression><![CDATA[$P{studentMarks}]]></expression>
+			</element>
+			<element kind="staticText" uuid="ccafe510-44fe-4a3b-b069-c23be8c6ecc4" x="10" y="20" width="247" height="50" forecolor="#FFFFFF" fontName="Algerian" fontSize="29.0" hTextAlign="Center">
+				<text><![CDATA[JASPER REPORT]]></text>
+				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
 		</element>
 	</title>
@@ -102,7 +113,7 @@
 		</band>
 	</detail>
 	<columnFooter/>
-	<pageFooter height="17">
+	<pageFooter height="36">
 		<element kind="textField" uuid="9ab45727-72c8-4e56-8c08-7c4a73d5c3db" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
 			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
 		</element>

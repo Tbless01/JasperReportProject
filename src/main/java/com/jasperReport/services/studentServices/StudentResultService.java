@@ -42,7 +42,7 @@ public class StudentResultService {
         StudentResult studentResult = getStudentResult(firstName);
         if (studentResult != null) {
             List<StudentResult> studentResults = List.of(studentResult); // Create a list from the single result
-            jasperService.getReportStudentContext(studentResults); // Call the JasperService to generate the report
+            jasperService.getReportStudentContext(firstName, studentResults); // Call the JasperService to generate the report
         } else {
             log.warn("No student result found for first name: {}", firstName);
         }
@@ -52,7 +52,7 @@ public class StudentResultService {
     public void generateReportAllStudents() throws JRException, IOException {
         List<StudentResult> studentResults = getAllStudentResult();
         if (studentResults != null) {
-           jasperService.getReportStudentContext(studentResults);
+           jasperService.getReportAllStudentsContext(studentResults);
         } else {
             log.warn("No student result found");
         }
